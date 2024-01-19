@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/styles/style.css" />
+    <link rel="icon" href="../src/images/navlogo.png" />
+    <title>WAY FOR WORK</title>
+  </head>
+
+  <body>
+    <div class="container form-container login-form mt-2">
+      <div class="header-buttons topp">
+        <button
+          class="btn btn-login rounded-0 w-50 topp"
+          onclick="showLoginForm()"
+        >
+          Login
+        </button>
+        <button
+          class="btn btn-signup w-50 rounded-0 topp"
+          onclick="showSignupForm()"
+        >
+          Signup
+        </button>
+      </div>
+      <div id="login-form">
+        <form class="pt-3">
+          <!-- Login form fields go here -->
+          <div class="form-group mb-3">
+            <label for="login-username">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="login-username"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="login-password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="login-password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div
+            class="form-group form-check d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="remember-me"
+              />
+              <label class="form-check-label" for="remember-me"
+                >Remember Me</label
+              >
+            </div>
+            <div>
+              <a href="#" class="forgot-password-link forget"
+                >Forgot Password?</a
+              >
+            </div>
+          </div>
+          <a
+            href="./show-job.html"
+            type="submit"
+            class="btn btn-login btn-block w-100 my-3 mt-3"
+          >
+            Submet
+          </a>
+        </form>
+      </div>
+
+      <div id="signup-form" class="signup-form" style="display: none">
+        <form class="pt-3">
+          <!-- Signup form fields go here -->
+          <div class="form-group mb-3">
+            <label for="signup-username">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="signup-username"
+              placeholder="Choose a username"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="signup-email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="signup-password"
+              placeholder="Choose a password"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="signup-confirm-password"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-fullname">Full Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="signup-fullname"
+              placeholder="Enter your full name"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="signup-phone">Phone Number:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="signup-phone"
+              placeholder="Enter your phone number"
+            />
+          </div>
+          <a
+            href="./profile-edit.html"
+            type="submit"
+            class="btn w-100 btn-signup btn-block"
+          >
+            Submet
+          </a>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function showLoginForm() {
+        document.getElementById("login-form").style.display = "block";
+        document.getElementById("signup-form").style.display = "none";
+      }
+
+      function showSignupForm() {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("signup-form").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
+<script src="../src/scripts/bootstrap.bundle.min.js"></script>

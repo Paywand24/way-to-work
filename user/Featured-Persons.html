@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      integrity="..."
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="../src/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/styles/Featured-Persons.css" />
+    <link rel="icon" href="../src/images/navlogo.png" />
+    <title>Featured Persons</title>
+  </head>
+
+  <body>
+    <!-------------------------------------------------------- Navigation -------------------------------------------------------->
+    <nav
+      style="
+        background-color: rgba(0, 0, 0, 0.822);
+        box-shadow: rgba(0, 255, 13, 0.093) 1px 1px 5px 1px;
+      "
+      class="navbar navbar-expand-lg fixed-top navbar-dark"
+    >
+      <div class="container">
+        <a href="index.html" class="navbar-brand">
+          <img
+            src="../src/images/navlogo.png"
+            alt=""
+            style="width: 60px; max-height: 60px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto d-lg-flex flex-lg-row-reverse">
+            <li class="nav-item ps-3">
+              <a
+                href="./Register.html"
+                class="nav-link float-end float-md-end border border-2 border-light Register text-light rounded-2"
+                >Register</a
+              >
+            </li>
+            <li class="nav-item text-sm-end">
+              <a
+                href="show-profile.html"
+                class="nav-link fw-semibold float-end float-md-end"
+                >Profile</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="show-post.html"
+                class="nav-link fw-semibold float-end float-md-end"
+                >Home</a
+              >
+            </li>
+           
+            <li class="nav-item text-sm-end">
+              <a
+                href="show-job.html"
+                class="nav-link fw-semibold float-end float-md-end"
+                >Job</a
+              >
+            </li>
+            <li class="nav-item text-sm-end">
+              <a
+                href="Featured-Persons.html"
+                class="nav-link fw-semibold float-end float-md-end"
+                >Featured-Persons</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!------------------------------------------------------- Header ------------------------------------------------------->
+    <div
+      class="hero"
+      style="
+        background-image: url('../src/images/company-way.jpg');
+        height: 90vh;
+      "
+    >
+      <br /><br />
+      <div class="container p-5">
+        <div
+          class="mt-5 p-4 pb-3 main-search-form-wrapper text-center text-md-start rounded-4"
+          style="
+            background-color: rgba(0, 0, 0, 0.352);
+            box-shadow: 3px 3px 40px 3px rgb(210, 234, 218);
+          "
+        >
+          <h1 class="text-white">Welcome to the Way of Work Website</h1>
+          <p class="text-white">The best way to find work</p>
+
+          <form
+            action="job-list.php"
+            method="GET"
+            autocomplete="off"
+            class="row g-3 align-items-center"
+          >
+            <div class="col-md-3">
+              <label for="workType" class="form-label visually-hidden"
+                >Select type of work</label
+              >
+              <select
+                class="form-select"
+                id="workType"
+                name="category"
+                aria-label="Select type of work"
+              >
+                <option value="" selected>Select type of work</option>
+                <option value="Garson">Garson</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Doctor">Doctor</option>
+                <option value="IT Computer">IT Computer</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="city" class="form-label visually-hidden"
+                >Select your city</label
+              >
+              <select
+                class="form-select"
+                id="city"
+                name="country"
+                aria-label="Select your city"
+              >
+                <option value="" selected>Select your city</option>
+                <option value="Hawler">Hawler</option>
+                <option value="Slemani">Slemani</option>
+                <option value="Dhok">Dhok</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <label for="time" class="form-label visually-hidden"
+                >Select time</label
+              >
+              <select
+                class="form-select"
+                id="time"
+                name="thirdSelect"
+                aria-label="Select time"
+              >
+                <option value="" selected>Select time</option>
+                <option value="Full-time">Full-time</option>
+                <option value="9 hours">9 hours</option>
+                <option value="3 hours">3 hours</option>
+              </select>
+            </div>
+
+            <div class="col-md-3">
+              <button
+                name="search"
+                value="✓"
+                type="submit"
+                class="btn btn-primary w-100"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+    <!----------------------------------------------------  card  ------------------------------------------------------>
+    <h2 class="text-center mb-4">Featured Persons</h2>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center my-5 mb-5">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-auto pr-0">
+                <img
+                  src="../src/images/bg-login.jpg"
+                  class="img-fluid profile-image"
+                  alt="Profile Image"
+                />
+              </div>
+              <div class="col">
+                <h5 class="mb-0">Paywand Surchy</h5>
+                <p class="mb-0 small">Doctor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              🌟 Hello, I'm Paywand! 🚀 I'm currently on the lookout for job
+              opportunities,
+              <span class="read-more-content">
+                and I wanted to share with you my background and aspirations. I
+                am a [Your Profession] currently residing in [Your Location]. My
+                journey has led me to gain valuable experience and skills in
+                [Your Field], and I am eager to contribute my expertise to a
+                dynamic and fulfilling work environment. If you have any leads,
+                job opportunities, or if you know someone looking for a skilled
+                and motivated [Your Profession], I would greatly appreciate your
+                support and connections. Let's collaborate and make the next
+                step in my career journey a success! 🌐💼 Thank you for being a
+                part of this search!
+              </span>
+              <span class="read-more-btn" id="readMoreBtn"> Read more...</span>
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <i class="bi bi-heart-fill like-icon" type="button"></i>
+                <span class="ms-1">Like</span>
+              </div>
+              <div class="col">
+                <i
+                  class="bi bi-chat-square-text-fill comment-icon"
+                  type="button"
+                ></i>
+                <span class="ms-1">Comment</span>
+              </div>
+              <div class="col">
+                <i class="bi bi-share-fill share-icon" type="button"></i>
+                <span class="ms-1">Share</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br />
+
+    <!----------------------------------------------------  Footer  ---------------------------------------------------------------->
+
+    <footer
+      class="text-center darkk text-lg-start border-top border-4 border-light text-light"
+      style="background-color: rgba(0, 0, 0, 0.825)"
+    >
+      <!-- Section: Social media -->
+      <section
+        class="d-flex darkk justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <!-- Left -->
+
+        <!-- Left -->
+
+        <!-- Right -->
+        <div>
+          <a href="" class="me-4 link-light">
+            <span class="material-icons"> تیلگرام </span>
+          </a>
+          <a href="" class="me-4 link-light">
+            <span class="material-icons"> زمان </span>
+          </a>
+          <a href="" class="me-4 link-light">
+            <span class="material-icons"> فەیسبووک </span>
+          </a>
+          <a href="" class="me-4 link-light">
+            <span class="material-icons"> تایبەت </span>
+          </a>
+        </div>
+        <div class="me-5 darkk d-none d-lg-block">
+          <span>:لە تۆڕە کۆمەڵایەتییەکان پەیوەندیمان پێوە بکە</span>
+        </div>
+        <!-- Right -->
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="darkk">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase darkk text-end fw-bold mb-4">
+                <i class="fas fa-gem me-3 text-light text-end"></i>سەنتەری
+                گەشەپێدانی کار
+              </h6>
+              <p class="text-end">
+                ماڵپەڕێک دەربارەی CDC بۆ فێربوونی فێرخواز پۆست دەربارەی زانکۆی
+                سۆران پیشان ئەدە
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4 text-end">بەرهەمەکان</h6>
+              <p class="text-end">
+                <a href="./ئاژەڵەکان/ئاژەڵەکان.html" class="text-reset">زمان</a>
+              </p>
+              <p class="text-end">
+                <a href="./وشکانیەکان/وشکانیەکان.html" class="text-reset"
+                  >کلتوورکردن</a
+                >
+              </p>
+              <p class="text-end">
+                <a href="./ئاویەکان/ئاویەکان.html" class="text-reset"
+                  >ناساندن</a
+                >
+              </p>
+              <p class="text-end">
+                <a href="./باڵندەکان/باڵندەکان.html" class="text-reset"
+                  >فێرکردن</a
+                >
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase text-end fw-bold mb-4">
+                بەستەرە بەسوودەکان
+              </h6>
+              <p class="text-end">
+                <a href="#!" class="text-reset">نرخدانان</a>
+              </p>
+              <p class="text-end">
+                <a href="#!" class="text-reset">دانانەوە</a>
+              </p>
+              <p class="text-end">
+                <a href="#!" class="text-reset">بابەت</a>
+              </p>
+              <p class="text-end">
+                <a href="#!" class="text-reset">یارماتی دان</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase text-end fw-bold mb-4">
+                :پەیوەندی ببەستە لەگەڵ
+              </h6>
+              <p class="text-end">
+                <span class="material-icons"> </span>
+                زانکۆی سۆران
+              </p>
+              <p class="text-end">
+                <span class="material-icons"> ئیمەیڵ </span>
+              </p>
+              <p class="text-end">
+                <span class="material-icons"> تەلەفۆن </span>
+              </p>
+              <p class="text-end">
+                <span class="material-icons"> مەسنجەر </span>
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div
+        class="darkk text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.025)"
+      >
+        © 2024 مافی کۆپیکردن:
+        <a class="text-reset fw-bold" href="">زانکۆی سۆران </a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script src="../src/scripts/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const readMoreBtn = document.getElementById("readMoreBtn");
+
+    readMoreBtn.addEventListener("click", function () {
+      const readMoreContent = document.querySelector(".read-more-content");
+      readMoreContent.style.display =
+        readMoreContent.style.display === "none" ? "inline" : "none";
+      readMoreBtn.textContent =
+        readMoreContent.style.display === "none"
+          ? " Read more..."
+          : " Read less";
+    });
+  });
+</script>
